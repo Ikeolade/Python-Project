@@ -1,0 +1,39 @@
+"""This program deterines the area of different shapes. It prompts t he user to select a shape. 
+The program calculates the area depending on the shape the user selected and prints the area of the shape to the user.""" 
+from math import pi 
+from time import sleep 
+from datetime import datetime 
+now = datetime.now() 
+print now 
+print "Dear user, the Calculator is starting up"
+print '%s/%s/%s %s:%s' % (now.month, now.day, now.year, now.hour, now.minute)
+sleep(1)
+hint = "Don't forget to include the correct units! \nExiting" 
+option = raw_input("Enter C for Circle or T for Triangle or R for Rectangle or S for Square: ")
+print option.upper() 
+if option == 'C': 
+radius = float(raw_input("Enter radius: ")) 
+area = pi * radius**2 
+print "The pie is baking..." 
+sleep(1) 
+print ("Area: %.2f. \n%s" % (area, hint))
+elif option == 'T': 
+base = float(raw_input("Enter base: ")) 
+height = float(raw_input("Enter height: "))
+area = (base * height) / 2
+print "Uni Bi Tri..." 
+sleep(1) 
+print ("Area: %.2f. \n%s" % (area, hint)) 
+elif option == 'R': 
+length = float(raw_input("Enter length: ")) 
+breadth = float(raw_input("Enter breadth: "))
+area = length * breadth print "Two equal four sided..." 
+sleep(1) 
+print ("Area: %.2f. \n%s" % (area, hint)) 
+elif option == 'S': 
+length = float(raw_input("Enter length: ")) 
+area = length**2 
+print "All equal four sided..." 
+sleep(1) 
+print ("Area: %.2f. \n%s" % (area, hint)) 
+else: print "You have entered an invalid option, the calculator will exit now"
