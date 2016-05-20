@@ -1,0 +1,37 @@
+"""This is a rock-paper-scissors program that prompts the user to select either rock, paper or scissors. It instructs the computer to randomly select either rock. paper, or scissors. it will compare the user's choice and the computer's choice and determine the winner and also inform the user who the winner is."""
+
+from random import randint
+from time import sleep
+
+options = ("R", "P", "S")
+LOSS_OUTPUT = "You lost!"
+WINNING_OUTPUT = "Congratulation, you won!"
+def decide_winner(user_choice, computer_choice):
+  print "Your choice is: %s" % user_choice
+  print "Computer choice..."
+  sleep(1)
+  print "Computer choice is: %s" % computer_choice
+  user_choice_index = options.index(user_choice)
+  computer_choice_index = options.index(computer_choice)
+  if user_choice == computer_choice:
+    print "It's a tie!"
+  elif user_choice == "R" and computer_choice == "S":
+    print WINNING_OUTPUT
+  elif user_choice == "P" and computer_choice == "R":
+    print WINNING_OUTPUT
+  elif user_choice == "S" and computer_choice == "P":
+    print WINNING_OUTPUT
+  elif user_choice_index > 2:
+    print "You entered an invalid option"
+    return
+  else:
+    print LOSS_OUTPUT
+def play_RPS():
+  print "Rock-Paper-Scissors Game!"
+user_choice = raw_input("Select R for Rock, P for Paper, or S for Scissors: ")
+sleep(1)
+user_choice = user_choice.upper()
+computer_choice = options[randint(0,len(options)-1)]
+decide_winner(user_choice, computer_choice)
+play_RPS()
+  
